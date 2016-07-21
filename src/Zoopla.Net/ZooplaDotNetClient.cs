@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Zoopla.Net.Models;
 using Zoopla.Net.Options;
@@ -18,14 +16,11 @@ namespace Zoopla.Net
             _httpClient = new ZooplaHttpClient();
         }
 
-        public async Task<PropertyListings> GetPropertyListings(string postcode, string area)
+        public async Task<PropertyListings> GetPropertyListings(ListingBaseOptions options)
         {
             string url = Endpoints.PROPERTY_LISTINGS + "?api_key=" + _accessToken;
 
-            // Best way to append options?
-            // Also needs expanding out to cover all options
-            url += "&postcode=" + postcode;
-            url += "&area=" + area;
+            url += options.GetUrlString();
 
             return await _httpClient.GetObject<PropertyListings>(url);
         }
@@ -33,6 +28,8 @@ namespace Zoopla.Net
         public async Task<AverageSoldPrices> GetAverageSoldPrices(string postcode, OutputType outputType, AreaType areaType)
         {
             string url = Endpoints.AVERAGE_SOLD_PRICES + "?api_key=" + _accessToken;
+
+            // As above for this one too
 
             // Best way to append options?
             url += "&postcode=" + postcode;
