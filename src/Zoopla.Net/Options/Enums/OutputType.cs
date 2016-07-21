@@ -8,6 +8,9 @@ namespace Zoopla.Net.Options
     public enum OutputType
     {
         OUTCODE,
-        COUNTY
+        AREA,
+        TOWN,
+        COUNTY,
+        COUNTRY
     }
 }

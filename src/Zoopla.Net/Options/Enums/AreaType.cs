@@ -7,10 +7,11 @@ namespace Zoopla.Net.Options
 {
     public enum AreaType
     {
+        AREAS,
         STREETS,
         TOWNS,
-        // Postcodes doesn't work??
         POSTCODES,
-        OUTCODES
+        OUTCODES,
+        COUNTIES
     }
 }
