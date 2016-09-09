@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Zoopla.Net.Models;
 using Zoopla.Net.Options;
+using Zoopla.Net.Options.AverageAreaSoldPrices;
 using Zoopla.Net.Options.AverageSoldPrices;
 using Zoopla.Net.Options.PropertyRichList;
 
@@ -45,11 +46,13 @@ namespace Zoopla.Net
             return await _httpClient.GetObject<PropertyRichList>(url);
         }
 
-        public async Task<string> GetAverageAreaSoldPrice()
+        public async Task<AverageAreaSoldPrice> GetAverageAreaSoldPrice(AverageAreaSoldPriceOptions options)
         {
             string url = Endpoints.AVERAGE_AREA_SOLD_PRICE + "?api_key=" + _accessToken;
 
-            throw new NotImplementedException();
+            url += options.GetUrlString();
+
+            return await _httpClient.GetObject<AverageAreaSoldPrice>(url);
         }
 
         public async Task<string> GetZedIndex()

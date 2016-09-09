@@ -18,7 +18,7 @@ namespace Zoopla.Net.Models
         public string Town { get; set; }
         public double Latitude { get; set; }
         public string County { get; set; }
-        public List<Area> Areas { get; set; }
+        public List<AverageSoldPrice> Areas { get; set; }
         [JsonProperty("bounding_box")]
         public BoundingBox BoundingBox { get; set; }
         public string Postcode { get; set; }
