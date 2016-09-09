@@ -89,11 +89,11 @@ namespace Zoopla.Net
             return await _httpClient.GetObject<AreaValueGraph>(url);
         }
 
-        public async Task<string> GetSessionId()
+        public async Task<Session> GetSessionId()
         {
             string url = Endpoints.SESSION_ID + "?api_key=" + _accessToken;
 
-            throw new NotImplementedException();
+            return await _httpClient.GetObject<Session>(url);
         }
 
         public async Task<string> GetRefineEstimate()
