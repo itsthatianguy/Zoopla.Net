@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Zoopla.Net.Models;
 using Zoopla.Net.Options;
+using Zoopla.Net.Options.AreaValueGraphs;
 using Zoopla.Net.Options.AverageAreaSoldPrices;
 using Zoopla.Net.Options.AverageSoldPrices;
 using Zoopla.Net.Options.PropertyRichList;
@@ -79,11 +80,13 @@ namespace Zoopla.Net
             return await _httpClient.GetObject<ZedIndices>(url);
         }
 
-        public async Task<string> GetAreaValueGraphs()
+        public async Task<AreaValueGraph> GetAreaValueGraphs(AreaValueGraphOptions options)
         {
             string url = Endpoints.AREA_VALUE_GRAPHS + "?api_key=" + _accessToken;
 
-            throw new NotImplementedException();
+            url += options.GetUrlString();
+
+            return await _httpClient.GetObject<AreaValueGraph>(url);
         }
 
         public async Task<string> GetSessionId()
