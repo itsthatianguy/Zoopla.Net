@@ -55,11 +55,18 @@ namespace Zoopla.Net
             return await _httpClient.GetObject<AverageAreaSoldPrice>(url);
         }
 
-        public async Task<string> GetZedIndex()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="options">OutputType on options can only be TOWN, OUTCODE, COUNTY, or COUNTRY</param>
+        /// <returns></returns>
+        public async Task<ZedIndexObject> GetZedIndex(StandardAreaOptions options)
         {
             string url = Endpoints.ZED_INDEX + "?api_key=" + _accessToken;
 
-            throw new NotImplementedException();
+            url += options.GetUrlString();
+
+            return await _httpClient.GetObject<ZedIndexObject>(url);
         }
 
         public async Task<string> GetZedIndices()
