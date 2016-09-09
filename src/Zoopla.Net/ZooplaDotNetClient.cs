@@ -5,6 +5,7 @@ using Zoopla.Net.Options;
 using Zoopla.Net.Options.AverageAreaSoldPrices;
 using Zoopla.Net.Options.AverageSoldPrices;
 using Zoopla.Net.Options.PropertyRichList;
+using Zoopla.Net.Options.ZedIndices;
 
 namespace Zoopla.Net
 {
@@ -69,11 +70,13 @@ namespace Zoopla.Net
             return await _httpClient.GetObject<ZedIndexObject>(url);
         }
 
-        public async Task<string> GetZedIndices()
+        public async Task<ZedIndices> GetZedIndices(ZedIndicesOptions options)
         {
             string url = Endpoints.ZED_INDICES + "?api_key=" + _accessToken;
 
-            throw new NotImplementedException();
+            url += options.GetUrlString();
+
+            return await _httpClient.GetObject<ZedIndices>(url);
         }
 
         public async Task<string> GetAreaValueGraphs()
