@@ -21,40 +21,40 @@ namespace Zoopla.Net
             _httpClient = new ZooplaHttpClient();
         }
 
-        public async Task<PropertyListings> GetPropertyListings(ListingBaseOptions options)
+        public Task<PropertyListings> GetPropertyListings(ListingBaseOptions options)
         {
             string url = Endpoints.PROPERTY_LISTINGS + "?api_key=" + _accessToken;
 
             url += options.GetUrlString();
 
-            return await _httpClient.GetObject<PropertyListings>(url);
+            return _httpClient.GetObject<PropertyListings>(url);
         }
 
-        public async Task<AverageSoldPrices> GetAverageSoldPrices(AverageSoldPricesOptions options)
+        public Task<AverageSoldPrices> GetAverageSoldPrices(AverageSoldPricesOptions options)
         {
             string url = Endpoints.AVERAGE_SOLD_PRICES + "?api_key=" + _accessToken;
 
             url += options.GetUrlString();
 
-            return await _httpClient.GetObject<AverageSoldPrices>(url);
+            return _httpClient.GetObject<AverageSoldPrices>(url);
         }
 
-        public async Task<PropertyRichList> GetPropertyRichList(PropertyRichListOptions options)
+        public Task<PropertyRichList> GetPropertyRichList(PropertyRichListOptions options)
         {
             string url = Endpoints.PROPERTY_RICH_LIST + "?api_key=" + _accessToken;
 
             url += options.GetUrlString();
 
-            return await _httpClient.GetObject<PropertyRichList>(url);
+            return _httpClient.GetObject<PropertyRichList>(url);
         }
 
-        public async Task<AverageAreaSoldPrice> GetAverageAreaSoldPrice(AverageAreaSoldPriceOptions options)
+        public Task<AverageAreaSoldPrice> GetAverageAreaSoldPrice(AverageAreaSoldPriceOptions options)
         {
             string url = Endpoints.AVERAGE_AREA_SOLD_PRICE + "?api_key=" + _accessToken;
 
             url += options.GetUrlString();
 
-            return await _httpClient.GetObject<AverageAreaSoldPrice>(url);
+            return _httpClient.GetObject<AverageAreaSoldPrice>(url);
         }
 
         /// <summary>
@@ -62,62 +62,62 @@ namespace Zoopla.Net
         /// </summary>
         /// <param name="options">OutputType on options can only be TOWN, OUTCODE, COUNTY, or COUNTRY</param>
         /// <returns></returns>
-        public async Task<ZedIndexObject> GetZedIndex(StandardAreaOptions options)
+        public Task<ZedIndexObject> GetZedIndex(StandardAreaOptions options)
         {
             string url = Endpoints.ZED_INDEX + "?api_key=" + _accessToken;
 
             url += options.GetUrlString();
 
-            return await _httpClient.GetObject<ZedIndexObject>(url);
+            return _httpClient.GetObject<ZedIndexObject>(url);
         }
 
-        public async Task<ZedIndices> GetZedIndices(ZedIndicesOptions options)
+        public Task<ZedIndices> GetZedIndices(ZedIndicesOptions options)
         {
             string url = Endpoints.ZED_INDICES + "?api_key=" + _accessToken;
 
             url += options.GetUrlString();
 
-            return await _httpClient.GetObject<ZedIndices>(url);
+            return _httpClient.GetObject<ZedIndices>(url);
         }
 
-        public async Task<AreaValueGraph> GetAreaValueGraphs(AreaValueGraphOptions options)
+        public Task<AreaValueGraph> GetAreaValueGraphs(AreaValueGraphOptions options)
         {
             string url = Endpoints.AREA_VALUE_GRAPHS + "?api_key=" + _accessToken;
 
             url += options.GetUrlString();
 
-            return await _httpClient.GetObject<AreaValueGraph>(url);
+            return _httpClient.GetObject<AreaValueGraph>(url);
         }
 
-        public async Task<Session> GetSessionId()
+        public Task<Session> GetSessionId()
         {
             string url = Endpoints.SESSION_ID + "?api_key=" + _accessToken;
 
-            return await _httpClient.GetObject<Session>(url);
+            return _httpClient.GetObject<Session>(url);
         }
 
-        public async Task<string> GetRefineEstimate()
+        public Task<string> GetRefineEstimate()
         {
             string url = Endpoints.REFINE_ESTIMATE + "?api_key=" + _accessToken;
 
             throw new NotImplementedException();
         }
 
-        public async Task<string> ArrangeViewing()
+        public Task<string> ArrangeViewing()
         {
             string url = Endpoints.ARRANGE_VIEWING + "?api_key=" + _accessToken;
 
             throw new NotImplementedException();
         }
 
-        public async Task<string> GetLocalInfoGraphs()
+        public Task<string> GetLocalInfoGraphs()
         {
             string url = Endpoints.LOCAL_INFO_GRAPHS + "?api_key=" + _accessToken;
 
             throw new NotImplementedException();
         }
 
-        public async Task<string> GetGeoAutocomplete()
+        public Task<string> GetGeoAutocomplete()
         {
             string url = Endpoints.GEO_AUTOCOMPLETE + "?api_key=" + _accessToken;
 
