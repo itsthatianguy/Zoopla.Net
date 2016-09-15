@@ -103,11 +103,11 @@ namespace Zoopla.Net
             throw new NotImplementedException();
         }
 
-        public Task<string> ArrangeViewing()
+        public Task<ArrangeViewing> ArrangeViewing()
         {
             string url = Endpoints.ARRANGE_VIEWING + "?api_key=" + _accessToken;
 
-            throw new NotImplementedException();
+            return _httpClient.GetObject<ArrangeViewing>(url);
         }
 
         public Task<string> GetLocalInfoGraphs()
