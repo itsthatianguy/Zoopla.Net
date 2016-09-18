@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Zoopla.Net.Models;
 using Zoopla.Net.Options;
 using Zoopla.Net.Options.AreaValueGraphs;
+using Zoopla.Net.Options.ArrangeViewing;
 using Zoopla.Net.Options.AverageAreaSoldPrices;
 using Zoopla.Net.Options.AverageSoldPrices;
 using Zoopla.Net.Options.PropertyRichList;
@@ -96,32 +97,36 @@ namespace Zoopla.Net
             return _httpClient.GetObject<Session>(url);
         }
 
-        public Task<string> GetRefineEstimate()
-        {
-            string url = Endpoints.REFINE_ESTIMATE + "?api_key=" + _accessToken;
+        //public Task<string> GetRefineEstimate()
+        //{
+        //    string url = Endpoints.REFINE_ESTIMATE + "?api_key=" + _accessToken;
 
-            throw new NotImplementedException();
-        }
+        //    throw new NotImplementedException();
+        //}
 
-        public Task<ArrangeViewing> ArrangeViewing()
+        public Task<ArrangeViewing> ArrangeViewing(ArrangeViewingOptions options)
         {
             string url = Endpoints.ARRANGE_VIEWING + "?api_key=" + _accessToken;
+
+            url += options.GetUrlString();
 
             return _httpClient.GetObject<ArrangeViewing>(url);
         }
 
-        public Task<string> GetLocalInfoGraphs()
-        {
-            string url = Endpoints.LOCAL_INFO_GRAPHS + "?api_key=" + _accessToken;
+        //public Task<LocalInfoGraphs> GetLocalInfoGraphs(StandardAreaOptions options)
+        //{
+        //    string url = Endpoints.LOCAL_INFO_GRAPHS + "?api_key=" + _accessToken;
 
-            throw new NotImplementedException();
-        }
+        //    url += options.GetUrlString();
 
-        public Task<string> GetGeoAutocomplete()
-        {
-            string url = Endpoints.GEO_AUTOCOMPLETE + "?api_key=" + _accessToken;
+        //    return _httpClient.GetObject<LocalInfoGraphs>(url);
+        //}
 
-            throw new NotImplementedException();
-        }
+        //public Task<string> GetGeoAutocomplete()
+        //{
+        //    string url = Endpoints.GEO_AUTOCOMPLETE + "?api_key=" + _accessToken;
+
+        //    throw new NotImplementedException();
+        //}
     }
 }
