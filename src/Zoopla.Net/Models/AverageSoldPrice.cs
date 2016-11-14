@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zoopla.Net.Models
 {
-    public class Area
+    public abstract class AverageSoldPrice
     {
         [JsonProperty("number_of_sales_7year")]
         public string NumberOfSales7Year { get; set; }

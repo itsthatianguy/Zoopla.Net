@@ -2,7 +2,12 @@
 using System.Threading.Tasks;
 using Zoopla.Net.Models;
 using Zoopla.Net.Options;
+using Zoopla.Net.Options.AreaValueGraphs;
+using Zoopla.Net.Options.ArrangeViewing;
+using Zoopla.Net.Options.AverageAreaSoldPrices;
 using Zoopla.Net.Options.AverageSoldPrices;
+using Zoopla.Net.Options.PropertyRichList;
+using Zoopla.Net.Options.ZedIndices;
 
 namespace Zoopla.Net
 {
@@ -17,92 +22,111 @@ namespace Zoopla.Net
             _httpClient = new ZooplaHttpClient();
         }
 
-        public async Task<PropertyListings> GetPropertyListings(ListingBaseOptions options)
+        public Task<PropertyListings> GetPropertyListings(ListingBaseOptions options)
         {
             string url = Endpoints.PROPERTY_LISTINGS + "?api_key=" + _accessToken;
 
             url += options.GetUrlString();
 
-            return await _httpClient.GetObject<PropertyListings>(url);
+            return _httpClient.GetObject<PropertyListings>(url);
         }
 
-        public async Task<AverageSoldPrices> GetAverageSoldPrices(AverageSoldPricesOptions options)
+        public Task<AverageSoldPrices> GetAverageSoldPrices(AverageSoldPricesOptions options)
         {
             string url = Endpoints.AVERAGE_SOLD_PRICES + "?api_key=" + _accessToken;
 
             url += options.GetUrlString();
 
-            return await _httpClient.GetObject<AverageSoldPrices>(url);
+            return _httpClient.GetObject<AverageSoldPrices>(url);
         }
 
-        public async Task<string> GetPropertyRichList()
+        public Task<PropertyRichList> GetPropertyRichList(PropertyRichListOptions options)
         {
             string url = Endpoints.PROPERTY_RICH_LIST + "?api_key=" + _accessToken;
 
-            throw new NotImplementedException();
+            url += options.GetUrlString();
+
+            return _httpClient.GetObject<PropertyRichList>(url);
         }
 
-        public async Task<string> GetAverageAreaSoldPrice()
+        public Task<AverageAreaSoldPrice> GetAverageAreaSoldPrice(AverageAreaSoldPriceOptions options)
         {
             string url = Endpoints.AVERAGE_AREA_SOLD_PRICE + "?api_key=" + _accessToken;
 
-            throw new NotImplementedException();
+            url += options.GetUrlString();
+
+            return _httpClient.GetObject<AverageAreaSoldPrice>(url);
         }
 
-        public async Task<string> GetZedIndex()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="options">OutputType on options can only be TOWN, OUTCODE, COUNTY, or COUNTRY</param>
+        /// <returns></returns>
+        public Task<ZedIndexObject> GetZedIndex(StandardAreaOptions options)
         {
             string url = Endpoints.ZED_INDEX + "?api_key=" + _accessToken;
 
-            throw new NotImplementedException();
+            url += options.GetUrlString();
+
+            return _httpClient.GetObject<ZedIndexObject>(url);
         }
 
-        public async Task<string> GetZedIndices()
+        public Task<ZedIndices> GetZedIndices(ZedIndicesOptions options)
         {
             string url = Endpoints.ZED_INDICES + "?api_key=" + _accessToken;
 
-            throw new NotImplementedException();
+            url += options.GetUrlString();
+
+            return _httpClient.GetObject<ZedIndices>(url);
         }
 
-        public async Task<string> GetAreaValueGraphs()
+        public Task<AreaValueGraph> GetAreaValueGraphs(AreaValueGraphOptions options)
         {
             string url = Endpoints.AREA_VALUE_GRAPHS + "?api_key=" + _accessToken;
 
-            throw new NotImplementedException();
+            url += options.GetUrlString();
+
+            return _httpClient.GetObject<AreaValueGraph>(url);
         }
 
-        public async Task<string> GetSessionId()
+        public Task<Session> GetSessionId()
         {
             string url = Endpoints.SESSION_ID + "?api_key=" + _accessToken;
 
-            throw new NotImplementedException();
+            return _httpClient.GetObject<Session>(url);
         }
 
-        public async Task<string> GetRefineEstimate()
-        {
-            string url = Endpoints.REFINE_ESTIMATE + "?api_key=" + _accessToken;
+        //public Task<string> GetRefineEstimate()
+        //{
+        //    string url = Endpoints.REFINE_ESTIMATE + "?api_key=" + _accessToken;
 
-            throw new NotImplementedException();
-        }
+        //    throw new NotImplementedException();
+        //}
 
-        public async Task<string> ArrangeViewing()
+        public Task<ArrangeViewing> ArrangeViewing(ArrangeViewingOptions options)
         {
             string url = Endpoints.ARRANGE_VIEWING + "?api_key=" + _accessToken;
 
-            throw new NotImplementedException();
+            url += options.GetUrlString();
+
+            return _httpClient.GetObject<ArrangeViewing>(url);
         }
 
-        public async Task<string> GetLocalInfoGraphs()
-        {
-            string url = Endpoints.LOCAL_INFO_GRAPHS + "?api_key=" + _accessToken;
+        //public Task<LocalInfoGraphs> GetLocalInfoGraphs(StandardAreaOptions options)
+        //{
+        //    string url = Endpoints.LOCAL_INFO_GRAPHS + "?api_key=" + _accessToken;
 
-            throw new NotImplementedException();
-        }
+        //    url += options.GetUrlString();
 
-        public async Task<string> GetGeoAutocomplete()
-        {
-            string url = Endpoints.GEO_AUTOCOMPLETE + "?api_key=" + _accessToken;
+        //    return _httpClient.GetObject<LocalInfoGraphs>(url);
+        //}
 
-            throw new NotImplementedException();
-        }
+        //public Task<string> GetGeoAutocomplete()
+        //{
+        //    string url = Endpoints.GEO_AUTOCOMPLETE + "?api_key=" + _accessToken;
+
+        //    throw new NotImplementedException();
+        //}
     }
 }
