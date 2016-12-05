@@ -8,6 +8,10 @@ namespace Zoopla.Net.Models
 {
     public abstract class AverageSoldPrice
     {
+        // Check json output for other endpoints, think there's standard return values
+
+        // Country, Result Count, Longitude, Area Name, Street, Town, Latitude, County, Bounding Box, PostCode
+        // Areas - array of the below:
         [JsonProperty("number_of_sales_7year")]
         public string NumberOfSales7Year { get; set; }
         [JsonProperty("average_sold_price_7year")]

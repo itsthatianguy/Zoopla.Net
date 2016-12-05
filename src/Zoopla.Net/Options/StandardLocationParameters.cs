@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Zoopla.Net.Options
@@ -32,7 +33,8 @@ namespace Zoopla.Net.Options
         {
             set
             {
-                UrlValues["postcode"] = value?.ToLower();
+                // Remove spaces from the postcode
+                UrlValues["postcode"] = Regex.Replace(value, @"\s+", "");
             }
         }
         public string County
