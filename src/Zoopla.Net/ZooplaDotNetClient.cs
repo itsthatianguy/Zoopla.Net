@@ -67,7 +67,7 @@ namespace Zoopla.Net
         {
             string url = Endpoints.ZED_INDEX + "?api_key=" + _accessToken;
 
-            url += options.GetUrlString();
+            url += options.GetUrlParams();
 
             return _httpClient.GetObject<ZedIndexObject>(url);
         }
