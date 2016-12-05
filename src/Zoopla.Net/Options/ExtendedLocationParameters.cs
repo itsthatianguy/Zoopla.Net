@@ -7,26 +7,47 @@ namespace Zoopla.Net.Options
 {
     public class ExtendedLocationParameters : StandardLocationParameters
     {
-        public float Latitude { get; set; }
-        public float Longitude { get; set; }
-        public float LatMax { get; set; }
-        public float LatMin { get; set; }
-        public float LonMax { get; set; }
-        public float LonMin { get; set; }
-
-        public void GetUrlString()
+        public float Latitude
         {
-            UrlValues = new Dictionary<string, string>();
-
-            base.AddProperties();
-            AddProperties();
-
-            base.ConstructUrl();
+            set
+            {
+                UrlValues["latitude"] = value.ToString();
+            }
         }
-
-        internal void AddProperties()
+        public float Longitude
         {
-            base.AddProperties();
+            set
+            {
+                UrlValues["longitude"] = value.ToString();
+            }
+        }
+        public float LatMax
+        {
+            set
+            {
+                UrlValues["lat_max"] = value.ToString();
+            }
+        }
+        public float LatMin
+        {
+            set
+            {
+                UrlValues["lat_min"] = value.ToString();
+            }
+        }
+        public float LonMax
+        {
+            set
+            {
+                UrlValues["lon_max"] = value.ToString();
+            }
+        }
+        public float LonMin
+        {
+            set
+            {
+                UrlValues["lon_min"] = value.ToString();
+            }
         }
     }
 }
