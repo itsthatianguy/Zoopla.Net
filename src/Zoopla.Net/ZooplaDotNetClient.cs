@@ -4,7 +4,6 @@ using Zoopla.Net.Models;
 using Zoopla.Net.Options;
 using Zoopla.Net.Options.AreaValueGraphs;
 using Zoopla.Net.Options.ArrangeViewing;
-using Zoopla.Net.Options.AverageAreaSoldPrices;
 using Zoopla.Net.Options.AverageSoldPrices;
 using Zoopla.Net.Options.PropertyRichList;
 using Zoopla.Net.Options.ZedIndices;
@@ -49,11 +48,11 @@ namespace Zoopla.Net
             return _httpClient.GetObject<PropertyRichList>(url);
         }
 
-        public Task<AverageAreaSoldPrice> GetAverageAreaSoldPrice(AverageAreaSoldPriceOptions options)
+        public Task<AverageAreaSoldPrice> GetAverageAreaSoldPrice(StandardLocationParameters locationParams)
         {
             string url = Endpoints.AVERAGE_AREA_SOLD_PRICE + "?api_key=" + _accessToken;
 
-            url += options.GetUrlString();
+            url += locationParams.GetUrlParams();
 
             return _httpClient.GetObject<AverageAreaSoldPrice>(url);
         }
