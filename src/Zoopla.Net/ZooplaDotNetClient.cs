@@ -21,11 +21,12 @@ namespace Zoopla.Net
             _httpClient = new ZooplaHttpClient();
         }
 
-        public Task<PropertyListings> GetPropertyListings(ListingBaseOptions options)
+        public Task<PropertyListings> GetPropertyListings(StandardLocationParameters locationParams, ListingBaseOptions options)
         {
             string url = Endpoints.PROPERTY_LISTINGS + "?api_key=" + _accessToken;
 
-            url += options.GetUrlString();
+            url += locationParams.GetUrlParams();
+            url += options.GetUrlParams();
 
             return _httpClient.GetObject<PropertyListings>(url);
         }

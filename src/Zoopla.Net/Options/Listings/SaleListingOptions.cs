@@ -7,28 +7,34 @@ namespace Zoopla.Net.Options
 {
     public class SaleListingOptions : ListingBaseOptions
     {
-        public int? IncludeSold { get; set; } // Either 1 or 0
-        public bool? NewHomes { get; set; }
-        public bool? ChainFree { get; set; }
-
-
-        public override string GetUrlString()
+        public SaleListingOptions()
         {
-            // If we're getting the URL string, clear any existing set values so it's accurate
-            UrlValues = new Dictionary<string, string>();
-            // Add the properties shared between rental and sales listings
-            AddCommonProperties();
-            // Add the sales specific properties
-            AddSalesOptions();
-            // Return the output of constructing the URL on the base class
-            return ConstructUrl();
+            IncludeSold = 0;
         }
 
-        private void AddSalesOptions()
+        /// <summary>
+        /// Value is either 0 (false) or 1 (true)
+        /// </summary>
+        public int IncludeSold
         {
-            UrlValues.Add("include_sold", IncludeSold.ToString()?.ToLower());
-            UrlValues.Add("new_homes", NewHomes.ToString()?.ToLower());
-            UrlValues.Add("chain_free", ChainFree.ToString()?.ToLower());
+            set
+            {
+                UrlValues["include_sold"] = value.ToString();
+            }
+        }
+        public bool NewHomes
+        {
+            set
+            {
+                UrlValues["new_homes"] = value.ToString();
+            }
+        }
+        public bool ChainFree
+        {
+            set
+            {
+                UrlValues["chain_free"] = value.ToString();
+            }
         }
     }
 }
