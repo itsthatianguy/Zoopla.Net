@@ -81,11 +81,12 @@ namespace Zoopla.Net
             return _httpClient.GetObject<ZedIndices>(url);
         }
 
-        public Task<AreaValueGraph> GetAreaValueGraphs(AreaValueGraphOptions options)
+        public Task<AreaValueGraph> GetAreaValueGraphs(StandardLocationParameters locationParams, AreaValueGraphOptions options)
         {
             string url = Endpoints.AREA_VALUE_GRAPHS + "?api_key=" + _accessToken;
 
-            url += options.GetUrlString();
+            url += locationParams.GetUrlParams();
+            url += options.GetUrlParams();
 
             return _httpClient.GetObject<AreaValueGraph>(url);
         }

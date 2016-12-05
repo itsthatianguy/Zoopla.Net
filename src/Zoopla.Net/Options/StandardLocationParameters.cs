@@ -56,5 +56,13 @@ namespace Zoopla.Net.Options
                 UrlValues["output_type"] = value.ToString()?.ToLower();
             }
         }
+
+        public AreaType AreaType
+        {
+            set
+            {
+                UrlValues["area_type"] = value.ToString()?.ToLower();
+            }
+        }
     }
 }
