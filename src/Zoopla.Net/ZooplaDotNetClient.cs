@@ -30,14 +30,14 @@ namespace Zoopla.Net
             return _httpClient.GetObject<PropertyListings>(url);
         }
 
-        public Task<AverageSoldPrices> GetAverageSoldPrices(StandardLocationParameters locationParams, AverageSoldPricesOptions options)
+        public Task<AverageSoldPrice> GetAverageSoldPrices(StandardLocationParameters locationParams, AverageSoldPricesOptions options)
         {
             string url = Endpoints.AVERAGE_SOLD_PRICES + "?api_key=" + _accessToken;
 
             url += locationParams.GetUrlParams();
             url += options.GetUrlParams();
 
-            return _httpClient.GetObject<AverageSoldPrices>(url);
+            return _httpClient.GetObject<AverageSoldPrice>(url);
         }
 
         public Task<PropertyRichList> GetPropertyRichList(PropertyRichListOptions options)
