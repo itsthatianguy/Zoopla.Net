@@ -63,11 +63,11 @@ namespace Zoopla.Net
         /// </summary>
         /// <param name="options">OutputType on options can only be TOWN, OUTCODE, COUNTY, or COUNTRY</param>
         /// <returns></returns>
-        public Task<ZedIndexObject> GetZedIndex(StandardAreaOptions options)
+        public Task<ZedIndexObject> GetZedIndex(StandardLocationParameters locationParams)
         {
             string url = Endpoints.ZED_INDEX + "?api_key=" + _accessToken;
 
-            url += options.GetUrlParams();
+            url += locationParams.GetUrlParams();
 
             return _httpClient.GetObject<ZedIndexObject>(url);
         }
