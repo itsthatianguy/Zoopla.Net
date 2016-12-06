@@ -10,6 +10,7 @@ namespace Zoopla.Net.Options
         public SaleListingOptions()
         {
             IncludeSold = 0;
+            UrlValues["listing_status"] = "sale";
         }
 
         /// <summary>

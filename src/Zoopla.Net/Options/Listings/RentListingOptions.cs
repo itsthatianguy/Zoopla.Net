@@ -5,27 +5,28 @@ namespace Zoopla.Net.Options
 {
     public class RentListingOptions : ListingBaseOptions
     {
-        public int? IncludeRented { get; set; } // Either 1 or 0
-        public Furnished Furnished { get; set; }
-
-        public override string GetUrlString()
+        public RentListingOptions()
         {
-            UrlValues = new Dictionary<string, string>();
-            // Add all values to the dictionary - separate into a construct method?
-            // Then add as appropriate to the url string
-
-            // Call base construct method first to add common properties to dictionary
-            AddCommonProperties();
-
-            AddRentalOptions();
-
-            return ConstructUrl();
+            IncludeRented = 0;
+            UrlValues["listing_status"] = "rent";
         }
 
-        private void AddRentalOptions()
+        /// <summary>
+        /// Value is either 0 (false) or 1 (true)
+        /// </summary>
+        public int IncludeRented
         {
-            UrlValues.Add("include_rented", IncludeRented.ToString()?.ToLower());
-            UrlValues.Add("furnished", Furnished.ToString()?.ToLower());
+            set
+            {
+                UrlValues["include_rented"] = value.ToString();
+            }
+        }
+        public Furnished Furnished
+        {
+            set
+            {
+                UrlValues["furnished"] = value.ToString()?.ToLower();
+            }
         }
     }
 }
