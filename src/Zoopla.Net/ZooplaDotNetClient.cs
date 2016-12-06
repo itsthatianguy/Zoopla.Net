@@ -41,11 +41,11 @@ namespace Zoopla.Net
             return _httpClient.GetObject<AverageSoldPrice>(url);
         }
 
-        public Task<PropertyRichList> GetPropertyRichList(PropertyRichListOptions options)
+        public Task<PropertyRichList> GetPropertyRichList(StandardLocationParameters locationParams)
         {
             string url = Endpoints.PROPERTY_RICH_LIST + "?api_key=" + _accessToken;
 
-            url += options.GetUrlString();
+            url += locationParams.GetUrlParams();
 
             return _httpClient.GetObject<PropertyRichList>(url);
         }
