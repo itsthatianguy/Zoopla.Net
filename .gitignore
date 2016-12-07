@@ -48,3 +48,5 @@ Temporary Items
 /.vs
 /src/Zoopla.Net/bin
 /src/Zoopla.Net/obj
+*.lock.json
+*.user
