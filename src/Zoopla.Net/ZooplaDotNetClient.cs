@@ -4,6 +4,7 @@ using Zoopla.Net.Models;
 using Zoopla.Net.Models.AreaValueGraphs;
 using Zoopla.Net.Models.AverageAreaSoldPrices;
 using Zoopla.Net.Models.AverageSoldPrices;
+using Zoopla.Net.Models.Listings;
 using Zoopla.Net.Options;
 using Zoopla.Net.Options.AreaValueGraphs;
 using Zoopla.Net.Options.ArrangeViewing;
