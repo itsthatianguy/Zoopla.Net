@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Zoopla.Net.Models
+namespace Zoopla.Net.Models.ZedIndices
 {
-    public class ZedIndices
+    public class ZedIndicesResponse
     {
         [JsonProperty("area_name")]
         public string AreaName { get; set; }
@@ -14,7 +14,7 @@ namespace Zoopla.Net.Models
         public string ResultsUrl { get; set; }
         [JsonProperty("result_count")]
         public string ResultCount { get; set; }
-        public List<ZedIndexResult> Results { get; set; }
+        public List<ZedIndexDetails> Results { get; set; }
         [JsonProperty("bounding_box")]
         public BoundingBox BoundingBox { get; set; }
         public string Country { get; set; }

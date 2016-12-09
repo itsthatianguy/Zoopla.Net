@@ -6,6 +6,8 @@ using Zoopla.Net.Models.AverageAreaSoldPrices;
 using Zoopla.Net.Models.AverageSoldPrices;
 using Zoopla.Net.Models.Listings;
 using Zoopla.Net.Models.PropertyRichList;
+using Zoopla.Net.Models.ZedIndex;
+using Zoopla.Net.Models.ZedIndices;
 using Zoopla.Net.Options;
 using Zoopla.Net.Options.AreaValueGraphs;
 using Zoopla.Net.Options.ArrangeViewing;
@@ -68,23 +70,23 @@ namespace Zoopla.Net
         /// </summary>
         /// <param name="options">OutputType on options can only be TOWN, OUTCODE, COUNTY, or COUNTRY</param>
         /// <returns></returns>
-        public Task<ZedIndexObject> GetZedIndex(StandardLocationParameters locationParams)
+        public Task<ZedIndexResponse> GetZedIndex(StandardLocationParameters locationParams)
         {
             string url = Endpoints.ZED_INDEX + "?api_key=" + _accessToken;
 
             url += locationParams.GetUrlParams();
 
-            return _httpClient.GetObject<ZedIndexObject>(url);
+            return _httpClient.GetObject<ZedIndexResponse>(url);
         }
 
-        public Task<ZedIndices> GetZedIndices(StandardLocationParameters locationParams, ZedIndicesOptions options)
+        public Task<ZedIndicesResponse> GetZedIndices(StandardLocationParameters locationParams, ZedIndicesOptions options)
         {
             string url = Endpoints.ZED_INDICES + "?api_key=" + _accessToken;
 
             url += locationParams.GetUrlParams();
             url += options.GetUrlParams();
 
-            return _httpClient.GetObject<ZedIndices>(url);
+            return _httpClient.GetObject<ZedIndicesResponse>(url);
         }
 
         public Task<AreaValueGraphResponse> GetAreaValueGraphs(StandardLocationParameters locationParams, AreaValueGraphOptions options)

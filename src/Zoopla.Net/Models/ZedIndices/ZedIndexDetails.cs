@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Zoopla.Net.Models
+namespace Zoopla.Net.Models.ZedIndices
 {
-    public class ZedIndexResult
+    public class ZedIndexDetails
     {
         public string Name { get; set; }
         public string Latitude { get; set; }
