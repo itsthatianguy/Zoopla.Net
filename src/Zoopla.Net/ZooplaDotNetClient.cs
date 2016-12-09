@@ -6,6 +6,7 @@ using Zoopla.Net.Models.AverageAreaSoldPrices;
 using Zoopla.Net.Models.AverageSoldPrices;
 using Zoopla.Net.Models.Listings;
 using Zoopla.Net.Models.PropertyRichList;
+using Zoopla.Net.Models.Session;
 using Zoopla.Net.Models.ZedIndex;
 using Zoopla.Net.Models.ZedIndices;
 using Zoopla.Net.Options;
@@ -99,11 +100,11 @@ namespace Zoopla.Net
             return _httpClient.GetObject<AreaValueGraphResponse>(url);
         }
 
-        public Task<Session> GetSessionId()
+        public Task<SessionResponse> GetSessionId()
         {
             string url = Endpoints.SESSION_ID + "?api_key=" + _accessToken;
 
-            return _httpClient.GetObject<Session>(url);
+            return _httpClient.GetObject<SessionResponse>(url);
         }
 
         //public Task<string> GetRefineEstimate()

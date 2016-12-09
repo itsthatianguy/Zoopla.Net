@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zoopla.Net.Models.ZedIndex
 {
-    public class ZedIndexResponse
+    public class ZedIndexResponse : ResponseModelBase
     {
         [JsonProperty("area_url")]
         public string AreaUrl { get; set; }

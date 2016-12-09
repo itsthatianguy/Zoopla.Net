@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zoopla.Net.Models.PropertyRichList
 {
-    public class PropertyRichListResponse
+    public class PropertyRichListResponse : ResponseModelBase
     {
         [JsonProperty("richlist_url")]
         public string RichlistUrl { get; set; }
