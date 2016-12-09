@@ -5,6 +5,7 @@ using Zoopla.Net.Models.AreaValueGraphs;
 using Zoopla.Net.Models.AverageAreaSoldPrices;
 using Zoopla.Net.Models.AverageSoldPrices;
 using Zoopla.Net.Models.Listings;
+using Zoopla.Net.Models.PropertyRichList;
 using Zoopla.Net.Options;
 using Zoopla.Net.Options.AreaValueGraphs;
 using Zoopla.Net.Options.ArrangeViewing;
@@ -24,14 +25,14 @@ namespace Zoopla.Net
             _httpClient = new ZooplaHttpClient();
         }
 
-        public Task<PropertyListings> GetPropertyListings(StandardLocationParameters locationParams, ListingBaseOptions options)
+        public Task<PropertyListingsResponse> GetPropertyListings(StandardLocationParameters locationParams, ListingBaseOptions options)
         {
             string url = Endpoints.PROPERTY_LISTINGS + "?api_key=" + _accessToken;
 
             url += locationParams.GetUrlParams();
             url += options.GetUrlParams();
 
-            return _httpClient.GetObject<PropertyListings>(url);
+            return _httpClient.GetObject<PropertyListingsResponse>(url);
         }
 
         public Task<AverageSoldPriceResponse> GetAverageSoldPrices(StandardLocationParameters locationParams, AverageSoldPricesOptions options)
@@ -44,13 +45,13 @@ namespace Zoopla.Net
             return _httpClient.GetObject<AverageSoldPriceResponse>(url);
         }
 
-        public Task<PropertyRichList> GetPropertyRichList(StandardLocationParameters locationParams)
+        public Task<PropertyRichListResponse> GetPropertyRichList(StandardLocationParameters locationParams)
         {
             string url = Endpoints.PROPERTY_RICH_LIST + "?api_key=" + _accessToken;
 
             url += locationParams.GetUrlParams();
 
-            return _httpClient.GetObject<PropertyRichList>(url);
+            return _httpClient.GetObject<PropertyRichListResponse>(url);
         }
 
         public Task<AverageAreaSoldPriceResponse> GetAverageAreaSoldPrice(StandardLocationParameters locationParams)

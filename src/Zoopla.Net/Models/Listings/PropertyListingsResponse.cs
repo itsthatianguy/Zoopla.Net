@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zoopla.Net.Models.Listings
 {
-    public class PropertyListings
+    public class PropertyListingsResponse
     {
         [JsonProperty("result_count")]
         public int ResultCount { get; set; }

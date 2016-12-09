@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Zoopla.Net.Models
+namespace Zoopla.Net.Models.PropertyRichList
 {
-    public class RichListObject
+    public class RichListDetails
     {
         public string Name { get; set; }
         [JsonProperty("zed_index")]
