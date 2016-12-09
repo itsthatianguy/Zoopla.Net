@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Zoopla.Net.Models
+namespace Zoopla.Net.Models.Listings
 {
     public class PriceChangeSummary
     {
