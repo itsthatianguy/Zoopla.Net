@@ -3,10 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Zoopla.Net.Models.AverageSoldPrices;
 
-namespace Zoopla.Net.Models
+namespace Zoopla.Net.Models.AverageAreaSoldPrices
 {
-    public class AverageAreaSoldPrice : AverageSoldPrice
+    public class AverageAreaSoldPriceResponse : AverageSoldPriceResponse
     {
         public string Country { get; set; }
         public string County { get; set; }

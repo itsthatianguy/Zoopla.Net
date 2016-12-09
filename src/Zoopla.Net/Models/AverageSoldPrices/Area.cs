@@ -4,17 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Zoopla.Net.Models
+namespace Zoopla.Net.Models.AverageSoldPrices
 {
-    public class AverageSoldPrice : StandardOutput
-    {
-        // Check json output for other endpoints, think there's standard return values
-
-        // Country, Result Count, Longitude, Area Name, Street, Town, Latitude, County, Bounding Box, PostCode
-        // Areas - array of the below:
-        public List<Area> Areas { get; set; }
-    }
-
     public class Area
     {
         [JsonProperty("number_of_sales_7year")]
