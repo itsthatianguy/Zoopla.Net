@@ -5,6 +5,7 @@ using Zoopla.Net.Models.AreaValueGraphs;
 using Zoopla.Net.Models.AverageAreaSoldPrices;
 using Zoopla.Net.Models.AverageSoldPrices;
 using Zoopla.Net.Models.Listings;
+using Zoopla.Net.Models.LocalInfoGraphs;
 using Zoopla.Net.Models.PropertyRichList;
 using Zoopla.Net.Models.Session;
 using Zoopla.Net.Models.ZedIndex;
@@ -123,14 +124,14 @@ namespace Zoopla.Net
             return _httpClient.GetObject<ArrangeViewing>(url);
         }
 
-        //public Task<LocalInfoGraphs> GetLocalInfoGraphs(StandardAreaOptions options)
-        //{
-        //    string url = Endpoints.LOCAL_INFO_GRAPHS + "?api_key=" + _accessToken;
+        public Task<LocalInfoGraphResponse> GetLocalInfoGraphs(StandardLocationParameters locationParams)
+        {
+            string url = Endpoints.LOCAL_INFO_GRAPHS + "?api_key=" + _accessToken;
 
-        //    url += options.GetUrlString();
+            url += locationParams.GetUrlParams();
 
-        //    return _httpClient.GetObject<LocalInfoGraphs>(url);
-        //}
+            return _httpClient.GetObject<LocalInfoGraphResponse>(url);
+        }
 
         //public Task<string> GetGeoAutocomplete()
         //{
