@@ -8,6 +8,7 @@ using Zoopla.Net.Models.GeoAutocomplete;
 using Zoopla.Net.Models.Listings;
 using Zoopla.Net.Models.LocalInfoGraphs;
 using Zoopla.Net.Models.PropertyRichList;
+using Zoopla.Net.Models.RefineEstimate;
 using Zoopla.Net.Models.Session;
 using Zoopla.Net.Models.ZedIndex;
 using Zoopla.Net.Models.ZedIndices;
@@ -16,6 +17,7 @@ using Zoopla.Net.Options.AreaValueGraphs;
 using Zoopla.Net.Options.ArrangeViewing;
 using Zoopla.Net.Options.AverageSoldPrices;
 using Zoopla.Net.Options.GeoAutocomplete;
+using Zoopla.Net.Options.RefineEstimate;
 using Zoopla.Net.Options.ZedIndices;
 
 namespace Zoopla.Net
@@ -110,12 +112,14 @@ namespace Zoopla.Net
             return _httpClient.GetObject<SessionResponse>(url);
         }
 
-        //public Task<string> GetRefineEstimate()
-        //{
-        //    string url = Endpoints.REFINE_ESTIMATE + "?api_key=" + _accessToken;
+        public Task<RefineEstimateResponse> GetRefineEstimate(RefineEstimateOptions options)
+        {
+            string url = Endpoints.REFINE_ESTIMATE + "?api_key=" + _accessToken;
 
-        //    throw new NotImplementedException();
-        //}
+            url += options.GetUrlParams();
+
+            return _httpClient.GetObject<RefineEstimateResponse>(url);
+        }
 
         public Task<ArrangeViewingResponse> ArrangeViewing(ArrangeViewingOptions options)
         {
