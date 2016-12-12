@@ -23,5 +23,11 @@ namespace Zoopla.Net.Models
 
         [JsonProperty("bounding_box")]
         public BoundingBox BoundingBox { get; set; }
+
+        [JsonProperty("error_string")]
+        public string ErrorString { get; set; }
+
+        [JsonProperty("error_code")]
+        public string ErrorCode { get; set; }
     }
 }
