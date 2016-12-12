@@ -8,6 +8,19 @@ namespace Zoopla.Net.Options.Enums
     public enum PropertyType
     {
         HOUSES,
-        FLATS
+        FLATS,
+        DETACHED,
+        LINK_DETACHED,
+        SEMI_DETACHED,
+        TERRACED,
+        FLAT,
+        END_TERRACE,
+        MAISONETTE,
+        MEWS,
+        TOWN_HOUSE,
+        COTTAGE,
+        BUNGALOW,
+        FARM_BARN,
+        PARK_HOME
     }
 }
