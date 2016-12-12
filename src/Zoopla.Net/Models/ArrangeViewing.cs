@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Zoopla.Net.Models
 {
-    public class ArrangeViewing
+    public class ArrangeViewing : ResponseModelBase
     {
         public int Success { get; set; }
 
