@@ -117,13 +117,13 @@ namespace Zoopla.Net
         //    throw new NotImplementedException();
         //}
 
-        public Task<ArrangeViewing> ArrangeViewing(ArrangeViewingOptions options)
+        public Task<ArrangeViewingResponse> ArrangeViewing(ArrangeViewingOptions options)
         {
             string url = Endpoints.ARRANGE_VIEWING + "?api_key=" + _accessToken;
 
-            url += options.GetUrlString();
+            url += options.GetUrlParams();
 
-            return _httpClient.GetObject<ArrangeViewing>(url);
+            return _httpClient.GetObject<ArrangeViewingResponse>(url);
         }
 
         public Task<LocalInfoGraphResponse> GetLocalInfoGraphs(StandardLocationParameters locationParams)
