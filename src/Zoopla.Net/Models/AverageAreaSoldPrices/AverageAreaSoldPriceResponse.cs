@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Zoopla.Net.Models.AverageSoldPrices;
 
-namespace Zoopla.Net.Models.AverageAreaSoldPrices
+namespace Zoopla.Net.Models
 {
     public class AverageAreaSoldPriceResponse : ResponseModelBase
     {

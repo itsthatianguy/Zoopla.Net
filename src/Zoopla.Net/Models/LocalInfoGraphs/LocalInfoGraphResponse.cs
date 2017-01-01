@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Zoopla.Net.Models.LocalInfoGraphs
+namespace Zoopla.Net.Models
 {
     public class LocalInfoGraphResponse : ResponseModelBase
     {
