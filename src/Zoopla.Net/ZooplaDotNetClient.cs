@@ -2,12 +2,6 @@
 using System.Threading.Tasks;
 using Zoopla.Net.Models;
 using Zoopla.Net.Options;
-using Zoopla.Net.Options.AreaValueGraphs;
-using Zoopla.Net.Options.ArrangeViewing;
-using Zoopla.Net.Options.AverageSoldPrices;
-using Zoopla.Net.Options.GeoAutocomplete;
-using Zoopla.Net.Options.RefineEstimate;
-using Zoopla.Net.Options.ZedIndices;
 
 namespace Zoopla.Net
 {

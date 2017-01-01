@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Zoopla.Net.Options.AverageAreaSoldPrices
+namespace Zoopla.Net.Options
 {
     public class AverageAreaSoldPriceOptions
     {

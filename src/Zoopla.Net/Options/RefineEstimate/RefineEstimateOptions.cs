@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Zoopla.Net.Options.Enums;
 
-namespace Zoopla.Net.Options.RefineEstimate
+namespace Zoopla.Net.Options
 {
     public class RefineEstimateOptions : OptionsBase
     {

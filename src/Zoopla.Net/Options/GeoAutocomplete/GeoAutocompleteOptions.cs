@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Zoopla.Net.Models.GeoAutocomplete;
 
-namespace Zoopla.Net.Options.GeoAutocomplete
+namespace Zoopla.Net.Options
 {
     public class GeoAutocompleteOptions : OptionsBase
     {

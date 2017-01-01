@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Zoopla.Net.Options.Enums;
 
-namespace Zoopla.Net.Options.ZedIndices
+namespace Zoopla.Net.Options
 {
     public class ZedIndicesOptions : OptionsBase
     {

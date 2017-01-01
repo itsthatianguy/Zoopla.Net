@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Zoopla.Net.Options.Enums;
 
-namespace Zoopla.Net.Options.AverageSoldPrices
+namespace Zoopla.Net.Options
 {
     public class AverageSoldPricesOptions : OptionsBase
     {
