@@ -5,7 +5,7 @@ using Zoopla.Net.Options;
 
 namespace Zoopla.Net
 {
-    public class ZooplaDotNetClient
+    public class ZooplaDotNetClient : IZooplaDotNetClient
     {
         private string _accessToken = String.Empty;
         private ZooplaHttpClient _httpClient;
