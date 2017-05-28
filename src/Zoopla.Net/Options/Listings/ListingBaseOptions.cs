@@ -65,7 +65,7 @@ namespace Zoopla.Net.Options
         {
             set
             {
-                UrlValues["property_type"] = value.ToString();
+                UrlValues["property_type"] = value.ToString()?.ToLower();
             }
         }
         /// <summary>
