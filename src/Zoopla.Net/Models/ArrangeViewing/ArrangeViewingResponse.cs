@@ -15,6 +15,8 @@ namespace Zoopla.Net.Models
         /// </value>
         public int Success { get; set; }
 
+        public bool IsSuccess => Success == 1;
+
         public string Error { get; set; }
     }
 }
