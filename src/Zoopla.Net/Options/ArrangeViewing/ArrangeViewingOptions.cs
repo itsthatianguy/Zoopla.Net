@@ -8,6 +8,10 @@ namespace Zoopla.Net.Options
 {
     public class ArrangeViewingOptions : OptionsBase
     {
+        /// <summary>
+        /// For testing purposes, we have blacklisted zoopla_developer@mashery.com for your convenience. 
+        /// </summary>
+        public const string TestEmail = "zoopla_developer@mashery.com";
 
         public string SessionId
         {
@@ -17,11 +21,11 @@ namespace Zoopla.Net.Options
             }
         }
 
-        public string ListingId
+        public int ListingId
         {
             set
             {
-                UrlValues["listing_id"] = value;
+                UrlValues["listing_id"] = value.ToString();
             }
         }
 

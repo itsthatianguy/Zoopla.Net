@@ -1,8 +1,5 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
+using Newtonsoft.Json;
 
 namespace Zoopla.Net.Models.Listings
 {
@@ -11,6 +8,6 @@ namespace Zoopla.Net.Models.Listings
         public string Direction { get; set; }
         public string Percent { get; set; }
         [JsonProperty("last_updated_date")]
-        public string LastUpdatedDate { get; set; }
+        public DateTime LastUpdatedDate { get; set; }
     }
 }
