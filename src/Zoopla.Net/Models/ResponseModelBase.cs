@@ -29,5 +29,7 @@ namespace Zoopla.Net.Models
 
         [JsonProperty("error_code")]
         public string ErrorCode { get; set; }
+
+        public IEnumerable<string> Disambiguation { get; set; }
     }
 }
