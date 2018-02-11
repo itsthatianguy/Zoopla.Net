@@ -2,6 +2,6 @@
 {
     public class ApiKey
     {
-        public static string Value => "phkjrsnyeep8dn36jpzh5k9b";
+        public static string Value => "";
     }
 }
