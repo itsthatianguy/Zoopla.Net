@@ -5,6 +5,10 @@ The documentation for the Zoopla API can be found [here](http://developer.zoopla
 
 Written in .Net Core 2.0
 
+```shell
+nuget - Zoopla.Net.Core
+```
+
 # Usage
 
 ```csharp
