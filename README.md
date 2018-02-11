@@ -6,7 +6,7 @@ The documentation for the Zoopla API can be found [here](http://developer.zoopla
 Written in .Net Core 2.0
 
 ```shell
-nuget - Zoopla.Net.Core
+Install-Package Zoopla.Net.Core -Version 1.0.0
 ```
 
 # Usage
