@@ -10,17 +10,13 @@
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <Authors>Ian Rufus</Authors>
+    <Authors>Ian Rufus, Colin Farr</Authors>
     <Description>A .NET Core wrapper for the Zoopla.co.uk API, enabling retrieval of property listings, estimates, area information, and urls for associated graphs.</Description>
     <PackageProjectUrl>https://github.com/ianrufus/Zoopla.Net</PackageProjectUrl>
     <PackageTags>Zoopla, RightMove, Property, NetCore, NetStandard</PackageTags>
-    <PackageReleaseNotes>Updated to match move to HTTPS
-Interface for the client added
-Project migrated to newer .NET Core SDK
-Bug with property types causing a bad request fixed
-
-With thanks to Colin Farr</PackageReleaseNotes>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <PackageReleaseNotes>Disambiguation property added to base response</PackageReleaseNotes>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>1.2.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
