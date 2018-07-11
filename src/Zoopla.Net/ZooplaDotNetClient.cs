@@ -17,6 +17,25 @@ namespace Zoopla.Net
         }
 
         /// <summary>
+        /// Gets listings of properties by IDs for sale, rent or either, depending on the supplied options.
+        /// </summary>
+        /// <param name="options">The byId, rental or sales listing options.</param>
+        /// <returns>A list of properties matching the given criteria.</returns>
+        public Task<PropertyListingsResponse> GetPropertyListingsByIds(ListingBaseOptions options)
+        {
+            if (options == null)
+                throw new ArgumentNullException(nameof(options));
+            if (string.IsNullOrEmpty(options.ListingId))
+                throw new ArgumentNullException(nameof(options.ListingId), "The listing options object must have a listingId set");
+
+            string url = Endpoints.PROPERTY_LISTINGS + "?api_key=" + _accessToken;
+            
+            url += options.GetUrlParams();
+
+            return _httpClient.GetObject<PropertyListingsResponse>(url);
+        }
+
+        /// <summary>
         /// Gets listings of properties either for sale or rent, depending on the supplied options.
         /// </summary>
         /// <param name="locationParams">The standard location parameters.</param>

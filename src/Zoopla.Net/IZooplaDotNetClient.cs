@@ -13,6 +13,7 @@ namespace Zoopla.Net
         Task<AverageSoldPriceResponse> GetAverageSoldPrices(StandardLocationParameters locationParams, AverageSoldPricesOptions options);
         Task<GeoAutocompleteResponse> GetGeoAutocomplete(GeoAutocompleteOptions options);
         Task<LocalInfoGraphResponse> GetLocalInfoGraphs(StandardLocationParameters locationParams);
+        Task<PropertyListingsResponse> GetPropertyListingsByIds(ListingBaseOptions options);
         Task<PropertyListingsResponse> GetPropertyListings(StandardLocationParameters locationParams, ListingBaseOptions options);
         Task<PropertyRichListResponse> GetPropertyRichList(StandardLocationParameters locationParams);
         Task<RefineEstimateResponse> GetRefineEstimate(RefineEstimateOptions options);
