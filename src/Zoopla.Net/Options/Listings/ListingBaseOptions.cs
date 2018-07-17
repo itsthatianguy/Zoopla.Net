@@ -80,6 +80,10 @@ namespace Zoopla.Net.Options
         }
         public string ListingId
         {
+            internal get
+            {
+                return UrlValues["listing_id"];
+            }
             set
             {
                 UrlValues["listing_id"] = value;
