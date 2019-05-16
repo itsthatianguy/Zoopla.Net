@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Title>Zoopla.Net</Title>
     <VersionPrefix>1.1.0</VersionPrefix>
     <TargetFramework>netstandard1.6</TargetFramework>
     <AssemblyName>Zoopla.Net</AssemblyName>
@@ -10,13 +11,13 @@
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <Authors>Ian Rufus, Colin Farr</Authors>
+    <Authors>Ian Rufus, Colin Farr, Ryan Southgate</Authors>
     <Description>A .NET Core wrapper for the Zoopla.co.uk API, enabling retrieval of property listings, estimates, area information, and urls for associated graphs.</Description>
     <PackageProjectUrl>https://github.com/ianrufus/Zoopla.Net</PackageProjectUrl>
     <PackageTags>Zoopla, RightMove, Property, NetCore, NetStandard</PackageTags>
-    <PackageReleaseNotes>Added GetListingsByIds method to client</PackageReleaseNotes>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Version>1.2.2</Version>
+    <PackageReleaseNotes>Fixed documentation output</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.2.3</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
 
