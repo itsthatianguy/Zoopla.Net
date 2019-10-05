@@ -55,28 +55,28 @@ namespace Zoopla.Net.Options
         {
             set
             {
-                UrlValues["lat_min"] = value.ToString()?.ToLower();
+                UrlValues["lat_min"] = value?.ToString().ToLower();
             }
         }
         public string LatMax
         {
             set
             {
-                UrlValues["lat_max"] = value.ToString()?.ToLower();
+                UrlValues["lat_max"] = value?.ToString().ToLower();
             }
         }
         public string LonMin
         {
             set
             {
-                UrlValues["lon_min"] = value.ToString()?.ToLower();
+                UrlValues["lon_min"] = value?.ToString().ToLower();
             }
         }
         public string LonMax
         {
             set
             {
-                UrlValues["lon_max"] = value.ToString()?.ToLower();
+                UrlValues["lon_max"] = value?.ToString().ToLower();
             }
         }
         public OutputType OutputType
