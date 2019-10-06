@@ -51,6 +51,34 @@ namespace Zoopla.Net.Options
                 UrlValues["country"] = value?.ToLower();
             }
         }
+        public string LatMin
+        {
+            set
+            {
+                UrlValues["lat_min"] = value?.ToLower();
+            }
+        }
+        public string LatMax
+        {
+            set
+            {
+                UrlValues["lat_max"] = value?.ToLower();
+            }
+        }
+        public string LonMin
+        {
+            set
+            {
+                UrlValues["lon_min"] = value?.ToLower();
+            }
+        }
+        public string LonMax
+        {
+            set
+            {
+                UrlValues["lon_max"] = value?.ToLower();
+            }
+        }
         public OutputType OutputType
         {
             set
