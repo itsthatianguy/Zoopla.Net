@@ -23,7 +23,7 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="System.Collections.Specialized" Version="4.0.1" />
+    <PackageReference Include="System.Collections.Specialized" Version="4.3.0" />
   </ItemGroup>
 
 </Project>
